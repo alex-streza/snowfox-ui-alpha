@@ -1,0 +1,11 @@
+@import '../../build.css';
+
+.sf-button {
+  @apply bg-main-500 hover:bg-main-700 focus:bg-main-800 focus:shadow-main-500 focus:shadow-sm;
+}
+.sf-button--outline {
+  @apply bg-transparent border border-main-500;
+}
+.sf-button--text {
+  @apply border-none text-main-500 bg-transparent hover:bg-transparent focus:bg-transparent focus:text-main-800;
+}

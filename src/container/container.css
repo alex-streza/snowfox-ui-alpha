@@ -1,0 +1,10 @@
+@import '../../styles/build.css';
+
+.sf-container {
+  width: 100%;
+  max-width: var(--sf-grid-container-max-width);
+
+  &--fluid {
+    max-width: 100%;
+  }
+}

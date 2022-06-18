@@ -1,0 +1,166 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
+import { Code } from '../../packages/react/src';
+import { Customization, Codesandbox } from '../../.storybook/components';
+
+<Meta
+  title="Components/Code"
+  component={Code}
+  argTypes={{
+    editable: {
+      name: 'editable',
+      description: 'Let the user edit the code',
+      table: {
+        defaultValue: { summary: 'true' }
+      },
+      control: {
+        type: 'boolean'
+      }
+    },
+    language: {
+      name: 'language',
+      description:
+        'Language to highlight, complete list https://github.com/highlightjs/highlight.js/blob/main/SUPPORTED_LANGUAGES.md',
+      table: {
+        defaultValue: { summary: 'typescript' }
+      },
+      options: [
+        'javascript',
+        'typescript',
+        'css',
+        'scss',
+        'json',
+        'xml',
+        'markdown'
+      ],
+      control: { type: 'multi-select' }
+    },
+    theme: {
+      name: 'theme',
+      description:
+        'Theme to use in the editor, complete list https://github.com/highlightjs/highlight.js/tree/main/src/styles',
+      table: {
+        defaultValue: { summary: 'github' }
+      },
+      options: [
+        'default',
+        'atom-one-dark',
+        'atom-one-light',
+        'github',
+        'monokai',
+        'vs',
+        'dark',
+        'tokyo-night-dark',
+        'tokyo-night-light',
+        'vs2015',
+        'routeros'
+      ],
+      control: { type: 'select' }
+    }
+  }}
+/>
+
+export const Template = (args) => (
+  <div>
+    <Code {...args}></Code>
+  </div>
+);
+
+# Code
+
+The Code component is created to highlight code blocks in your application, is a wrapper of [highlight.js](https://highlightjs.org/) and any of the themes or languages supported there are also supported in this library.
+
+## Showcase
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      editable: true,
+      languages: ['typescript', 'xml'],
+      theme: 'github',
+      children:
+        "import React from 'react'; \n\n" +
+        'type CardProps = { \n' +
+        '  title: string, \n' +
+        '  paragraph: string \n' +
+        '} \n\n' +
+        'export const Card = (props: CardProps) => { \n' +
+        '  const { title, paragraph } = props; \n\n' +
+        '  return ( \n' +
+        '    <aside> \n' +
+        '      <h2>{title}</h2> \n' +
+        '      <p>{paragraph}</p> \n' +
+        '    </aside> \n' +
+        '  ); \n' +
+        '}; \n\n' +
+        "const el = <Card title='Hello and welcome!' paragraph='To this snowfox' />\n"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Properties
+
+<ArgsTable story="Default" of={Code} />
+
+## How to use this component
+
+### Angular
+
+<Codesandbox
+  components={['Code']}
+  platform="angular"
+  dependencies={{ 'highlight.js': '11.5.1' }}
+  code={`
+     <div sf-code editable="true" languages={['javascript']} theme="a11y-dark">const name = 'component';</div>`}
+/>
+
+### React
+
+<Codesandbox
+  components={['Code']}
+  platform="react"
+  dependencies={{ 'highlight.js': '11.5.1' }}
+  code={`
+     <Code editable languages={['javascript']} theme="a11y-dark">const name = 'component';</Code>`}
+/>
+
+### Solid
+
+<Codesandbox
+  components={['Code']}
+  platform="solid"
+  dependencies={{ 'highlight.js': '11.5.1' }}
+  code={`
+     <Code editable languages={['javascript']} theme="a11y-dark">const name = 'component';</Code>`}
+/>
+
+### Svelte
+
+<Codesandbox
+  components={['Code']}
+  platform="svelte"
+  dependencies={{ 'highlight.js': '11.5.1' }}
+  code={`
+     <Code editable languages={['javascript']} theme="a11y-dark">const name = 'component';</Code>`}
+/>
+
+### Vue
+
+<Codesandbox
+  components={['Code']}
+  platform="vue"
+  dependencies={{ 'highlight.js': '11.5.1' }}
+  code={`
+     <Code :editable="true" :languages="['javascript']" theme="a11y-dark">const name = 'component';</Code>`}
+/>
+
+### Web Components
+
+<Codesandbox
+  components={['Code']}
+  platform="webcomponents"
+  dependencies={{ 'highlight.js': '11.5.1' }}
+  code={`<sf-code editable="true" languages="['javascript']" theme="a11y-dark">const name = 'component';</sf-code>`}
+/>

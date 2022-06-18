@@ -1,0 +1,10 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import './button.css';
+@import './code.css';
+@import './column.css';
+@import './container.css';
+@import './row.css';
+@import './pill.css';

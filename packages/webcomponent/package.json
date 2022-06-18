@@ -1,0 +1,31 @@
+{
+  "name": "@snowfox/webcomponents",
+  "version": "0.2.0-21",
+  "author": "ckgrafico/snowfox",
+  "description": "snowfox Web Components UI Library",
+  "main": "./dist/snowfox-webcomponents.umd.js",
+  "module": "./dist/snowfox-webcomponents.es.js",
+  "style": "./dist/snowfox.css",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/snowfox-webcomponents.es.js",
+      "require": "./dist/snowfox-webcomponents.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "run-s build:**",
+    "build:code": "rollup -c",
+    "build:styles": "replace \"\\.sf-(.*?)((--|__).*?)?((\\.pa|\\.is|\\.has).*?)?(,|:|{)\" \"sf-$1::part(sf-$1$2 $4)$6\" ./dist -r --include=\"*.es.js,*.umd.js,*.css\"",
+    "build:styles-classes-css": "replace \" \\.(sf-|is-|has-)(.*?)(,|:|{)\" \" $1$2$3\" ./dist -r --include=\"*.css\"",
+    "build:styles-classes-states": "replace \"(::part\\(.*?)\\.(sf-|is-|has-)(.*?)(\\))\" \"$1 $2$3$4\" ./dist -r --include=\"*.css\"",
+    "build:styles-classes-js": "replace \" \\.(sf-|is-|has-)(.*?)(,|:|{)\" \" $1$2$3\" ./dist -r --include=\"*.es.js,*.umd.js\""
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "2d0ca06271a799e38e834e483bd0f0ce4f3c4b73"
+}

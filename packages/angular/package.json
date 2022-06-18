@@ -1,0 +1,29 @@
+{
+  "name": "@snowfox/angular",
+  "version": "0.2.0-21",
+  "author": "ckgrafico/snowfox",
+  "description": "snowfox Angular UI Library",
+  "main": "./dist/snowfox-angular.umd.js",
+  "module": "./dist/snowfox-angular.es.js",
+  "style": "./dist/snowfox.css",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/snowfox-angular.es.js",
+      "require": "./dist/snowfox-angular.umd.js"
+    }
+  },
+  "peerDependencies": {
+    "@angular/core": "^13.x || ^14.x"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "2d0ca06271a799e38e834e483bd0f0ce4f3c4b73"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "@snowfox/solid",
+  "version": "0.2.0-21",
+  "author": "ckgrafico/snowfox",
+  "description": "snowfox Solid JS UI Library",
+  "main": "./dist/snowfox-solid.umd.js",
+  "module": "./dist/snowfox-solid.es.js",
+  "style": "./dist/snowfox.css",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/snowfox-solid.es.js",
+      "require": "./dist/snowfox-solid.umd.js"
+    }
+  },
+  "peerDependencies": {
+    "solid-js": "^1.x"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "2d0ca06271a799e38e834e483bd0f0ce4f3c4b73"
+}

@@ -1,0 +1,46 @@
+@import '../../build.css';
+
+.sf-code {
+  @mixin shared-styles;
+
+  border-radius: var(--sf-border-radius-small);
+  box-shadow: var(--sf-shadow-normal);
+  border: var(--sf-border-width-small) solid var(--sf-color-basic-brighter);
+  width: 100%;
+  overflow: hidden;
+
+  &__editor {
+    &--dark {
+      color: var(--sf-color-basic-brightest);
+    }
+  }
+
+  &__actions {
+    background: var(--sf-color-basic-brightest);
+    backdrop-filter: blur(2px);
+  }
+
+  &__action {
+    background-color: var(--sf-color-basic-brightest);
+    border: var(--sf-border-width-small) solid var(--sf-color-basic-bright);
+    border-right: 0;
+    border-bottom: 0;
+    color: var(--sf-color-basic-darkest);
+    font-size: var(--sf-font-size-small);
+    font-weight: var(--sf-font-weight-black);
+    transition-duration: var(--sf-transition-duration-normal);
+    transition-property: var(--sf-transition-colors);
+
+    &:nth-child(1) {
+      border-top-left-radius: var(--sf-border-radius-small);
+    }
+
+    &:hover {
+      background-color: var(--sf-color-basic-brighter);
+    }
+
+    &--text &:hover {
+      background-color: var(--sf-color-basic-brightest);
+    }
+  }
+}

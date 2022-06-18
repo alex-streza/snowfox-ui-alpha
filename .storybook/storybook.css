@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700&display=swap');
+@import '../styles/build.css';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--sf-font-family);
+  font-size: var(--sf-font-size);
+  font-weight: var(--sf-font-weight-normal);
+}
+
+.sbdocs-h2 {
+  border: 0 !important;
+}
+
+.sidebar-item {
+  padding: 20px 0 !important;
+}
+
+.docs-story {
+  .sf-container {
+    @mixin background-opacity var(--sf-color-primary-brightest), 0.2;
+    color: var(--sf-color-primary-darkest);
+    font-weight: var(--sf-font-weight-medium);
+  }
+
+  .sf-row {
+    @mixin background-opacity var(--sf-color-primary-brightest), 0.2;
+    color: var(--sf-color-primary-darkest);
+  }
+
+  .sf-column {
+    @mixin background-opacity var(--sf-color-primary-brightest), 0.25;
+    color: var(--sf-color-primary-darkest);
+    padding: 0.25rem;
+    justify-content: center;
+
+    &.is-highlighted {
+      @mixin background-opacity var(--sf-color-primary-brightest), 0.8;
+    }
+  }
+
+  .sf-button,
+  .sf-pill {
+    margin-right: 0.5rem;
+  }
+}

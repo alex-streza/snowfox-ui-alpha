@@ -1,0 +1,30 @@
+{
+  "name": "@snowfox/react",
+  "version": "0.2.0-21",
+  "author": "ckgrafico/snowfox",
+  "description": "snowfox React UI Library",
+  "main": "./dist/snowfox-react.umd.js",
+  "module": "./dist/snowfox-react.es.js",
+  "style": "./dist/snowfox.css",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/snowfox-react.es.js",
+      "require": "./dist/snowfox-react.umd.js"
+    }
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || 17.x",
+    "react-dom": "^16.8.0 || 17.x"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "2d0ca06271a799e38e834e483bd0f0ce4f3c4b73"
+}

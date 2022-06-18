@@ -1,0 +1,103 @@
+import "./customization.css";
+
+import React, { useMemo, useState } from "react";
+
+import { Code, Column, Container, Row } from "../../packages/react";
+
+type CustomizationProps = {
+  css?: string;
+  selector?: string;
+  showCode?: boolean;
+};
+
+const templateCSS = (css, selector = '') => `/**
+* You can edit this code, just click inside and modify it.
+* Check all the variables at https://github.com/CKGrafico/snowfox/blob/main/styles/variables.css
+**/
+
+.docs-story ${selector} {
+${css}
+}
+`;
+
+const defaultCss = `
+  --sf-color-basic-brightest: #ffffff;
+  --sf-color-basic-darkest: #101116;
+  --sf-color-primary-normal: #017aff;
+  --sf-color-secondary-normal: #6c47ff;
+  --sf-color-tertiary-normal: #f34971;
+
+  /* ... */
+`;
+
+// TODO: Use our select in the future?
+export function Customization(props: CustomizationProps) {
+  const { css = defaultCss, showCode = true, selector = '' } = props;
+
+  const [selected, setSelected] = useState('snowfox');
+  const [customCss, setCustomCss] = useState('');
+
+  const themes = [
+    {
+      name: 'None',
+      value: 'none',
+      css: ''
+    },
+    {
+      name: 'snowfox',
+      value: 'snowfox',
+      css: `/snowfox.css?${performance.now()}`
+    }
+  ];
+
+  const stylePath = useMemo(
+    () => themes?.find((x) => x.value === selected)?.css,
+    [selected]
+  );
+
+  function onChangeSelect(event) {
+    setSelected(event.target.value);
+  }
+
+  function onChangeCss(text) {
+    setCustomCss(text);
+  }
+
+  return (
+    <Container className="customization">
+      {stylePath && <link rel="stylesheet" type="text/css" href={stylePath} />}
+      <style>{customCss}</style>
+
+      <Row>
+        <Column xs={'content'} className="customization__label">
+          Choose a theme
+        </Column>
+        <Column xs={'content'}>
+          <select onChange={onChangeSelect} defaultValue={selected}>
+            {themes.map((theme) => (
+              <option key={theme.value} value={theme.value}>
+                {theme.name}
+              </option>
+            ))}
+          </select>
+        </Column>
+      </Row>
+      {css && selected !== 'none' && showCode && (
+        <>
+          <Row>
+            <Column xs={'content'} className="customization__label">
+              Customize CSS properties
+            </Column>
+          </Row>
+          <Row>
+            <Column xs={'fill'}>
+              <Code onChange={onChangeCss} editable theme="github">
+                {templateCSS(css, selector)}
+              </Code>
+            </Column>
+          </Row>
+        </>
+      )}
+    </Container>
+  );
+}

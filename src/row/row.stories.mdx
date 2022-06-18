@@ -1,0 +1,118 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
+import { Row, Container, Column } from '../../packages/react/src';
+import { variants, Intent, intents } from '../../models';
+import { getBreakpointArgTypes } from '../../helpers';
+import { Customization, Codesandbox } from '../../.storybook/components';
+
+<Meta
+  title="Layout/Row"
+  component={Row}
+  argTypes={{
+    ...getBreakpointArgTypes('Direction in {breakpoint}', [
+      '',
+      'row',
+      'column',
+      'row-reverse',
+      'column-reverse'
+    ])
+  }}
+/>
+
+export const Template = (args) => (
+  <Container>
+    <Row {...args}>
+      <Column>Row</Column>
+    </Row>
+  </Container>
+);
+
+# Row
+
+Rows are layout elements that can contain a group of other elements using flex properties. They can be used to create a grid of elements.
+
+The direction inside a row can be different for each breakpoint: `xs`, `s`, `m`, `l`, `xl` and `xxl` and the supported directions are: `row`, `column`, `row-reverse` and `column-reverse`.
+
+## Showcase
+
+<Canvas>
+  <Story name="Default" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Customization
+
+<Customization
+  css={`
+    /* Grid */
+    --sf-grid-gutter: 0.15rem;
+    --sf-grid-gutter-horizontal: var(--sf-grid-gutter);
+    --sf-grid-gutter-vertical: var(--sf-grid-gutter);
+    --sf-grid-max-width: var(--sf-breakpoint-xl);
+  `}
+/>
+
+### Properties
+
+<ArgsTable story="Default" of={Row} />
+
+## How to use this component
+
+### Angular
+
+<Codesandbox
+  components={['Row']}
+  platform="angular"
+  code={`
+    <row m="column" l="row"> Your content </row>`}
+/>
+
+### React
+
+<Codesandbox
+  components={['Row']}
+  platform="react"
+  code={`
+    <Row m="column" l="row">
+      Your content
+    </Row>`}
+/>
+
+### Solid
+
+<Codesandbox
+  components={['Row']}
+  platform="solid"
+  code={`
+    <Row m="column" l="row">
+      Your content
+    </Row>`}
+/>
+
+### Svelte
+
+<Codesandbox
+  components={['Row']}
+  platform="svelte"
+  code={`
+    <Row m="column" l="row">
+      Your content
+    </Row>`}
+/>
+
+### Vue
+
+<Codesandbox
+  components={['Row']}
+  platform="vue"
+  code={`
+    <Row m="column" l="row">Your Content</Row>`}
+/>
+
+### Web Components
+
+<Codesandbox
+  components={['Row']}
+  platform="webcomponents"
+  code={`<sf-row m="column" l="row">Your content</sf-row>`}
+/>

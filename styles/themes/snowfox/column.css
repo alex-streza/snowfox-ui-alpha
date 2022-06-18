@@ -1,0 +1,5 @@
+@import '../../build.css';
+
+.sf-column {
+  @mixin shared-styles;
+}

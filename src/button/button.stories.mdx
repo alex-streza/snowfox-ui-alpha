@@ -1,0 +1,153 @@
+import { Canvas, Meta, Story, ArgsTable } from '@storybook/addon-docs';
+import { Button } from '../../packages/react/src';
+import { variants, Intent, intents } from '../../models';
+import { Customization, Codesandbox } from '../../.storybook/components';
+
+<Meta
+  title="Components/Button"
+  component={Button}
+  argTypes={{
+    outline: {
+      name: 'outline',
+      description: 'Modify button to be outlined',
+      table: {
+        defaultValue: { summary: 'false' }
+      },
+      control: {
+        type: 'boolean'
+      }
+    },
+    disabled: {
+      name: 'disabled',
+      description: 'Disable actions in the button',
+      table: {
+        defaultValue: { summary: 'false' }
+      },
+      control: {
+        type: 'boolean'
+      }
+    },
+    intent: {
+      name: 'intent',
+      description: 'Specify a temporary intent for the button',
+      table: {
+        defaultValue: { summary: Intent.None }
+      },
+      options: intents.map((x) => x.value),
+      control: { type: 'select' }
+    }
+  }}
+/>
+
+export const Template = (args) => (
+  <div>
+    {variants.map((variant) => (
+      <Button key={variant.key} {...args} variant={variant.value}>
+        {variant.key}
+      </Button>
+    ))}
+  </div>
+);
+
+# Button
+
+Buttons allow to take actions in the app, and are used for navigation, forms, or any other task.
+There are 3 different variants `primary`, `secondary` and `tertiary` or the one you decide to create, but also other 4 intents `info`, `success`, `warning` and `error`.
+
+You can customize variants changing the variables, more info in the [variables page](/docs/start--sfge)
+
+## Showcase
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      outline: false,
+      disabled: false
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Customization
+
+<Customization
+  selector=".sf-button"
+  css={`
+    --sf-color-basic-brightest: #ffffff;
+    --sf-color-basic-darkest: #101116;
+    --sf-color-primary-normal: #017aff;
+    --sf-color-secondary-normal: #6c47ff;
+    --sf-color-tertiary-normal: #f34971;
+    --sf-button-radius: var(--sf-border-radius-small);
+    --sf-button-border-width: var(--sf-border-width-small);
+    --sf-button-font-weight: var(--sf-font-weight-medium);
+    --sf-button-outline: var(--sf-outline-width);
+  `}
+/>
+
+### Properties
+
+<ArgsTable story="Default" of={Button} />
+
+## How to use this component
+
+### Angular
+
+<Codesandbox
+  components={['Button']}
+  platform="angular"
+  code={`
+    <span sf-button variant="primary" outline="true">Primary</span>`}
+/>
+
+### React
+
+<Codesandbox
+  components={['Button']}
+  platform="react"
+  code={`
+  <Button variant="primary" outline>
+    Primary
+  </Button>`}
+/>
+
+### Solid
+
+<Codesandbox
+  components={['Button']}
+  platform="solid"
+  code={`
+  <Button variant="primary" outline>
+    Primary
+  </Button>`}
+/>
+
+### Svelte
+
+<Codesandbox
+  components={['Button']}
+  platform="svelte"
+  code={`
+  <Button variant="primary" outline>
+    Primary
+  </Button>`}
+/>
+
+### Vue
+
+<Codesandbox
+  components={['Button']}
+  platform="vue"
+  code={`
+  <Button variant="primary" :outline="true">Primary</Button>`}
+/>
+
+### Web Components
+
+<Codesandbox
+  components={['Button']}
+  platform="webcomponents"
+  code={`<sf-button variant="primary" outline="true">Primary</sf-button>`}
+/>
