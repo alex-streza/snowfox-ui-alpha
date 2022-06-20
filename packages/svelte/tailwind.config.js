@@ -21,7 +21,8 @@ module.exports = {
         700: 'hsla(169, 65%, 53%, 1)',
         800: 'hsla(169, 65%, 48%, 1)',
         900: 'hsla(169, 65%, 43%, 1)',
-        1000: 'hsla(169, 65%, 38%, 1)'
+        1000: 'hsla(169, 65%, 38%, 1)',
+        transparent: 'hsla(169, 65%, 38%, 0.2)'
       },
       green: {
         100: 'hsla(169, 65%, 83%, 1)',
@@ -33,7 +34,8 @@ module.exports = {
         700: 'hsla(169, 65%, 53%, 1)',
         800: 'hsla(169, 65%, 48%, 1)',
         900: 'hsla(169, 65%, 43%, 1)',
-        1000: 'hsla(169, 65%, 38%, 1)'
+        1000: 'hsla(169, 65%, 38%, 1)',
+        transparent: 'hsla(169, 65%, 38%, 0.2)'
       },
       red: {
         100: 'hsla(360, 96%, 83%, 1)',
@@ -45,7 +47,8 @@ module.exports = {
         700: 'hsla(360, 96%, 53%, 1)',
         800: 'hsla(360, 96%, 48%, 1)',
         900: 'hsla(360, 96%, 43%, 1)',
-        1000: 'hsla(360, 96%, 38%, 1)'
+        1000: 'hsla(360, 96%, 38%, 1)',
+        transparent: 'hsla(360, 96%, 38%, 0.2)'
       },
       blue: {
         100: 'hsla(218, 96%, 83%, 1)',
@@ -57,7 +60,7 @@ module.exports = {
         700: 'hsla(218, 96%, 53%, 1)',
         800: 'hsla(218, 96%, 48%, 1)',
         900: 'hsla(218, 96%, 43%, 1)',
-        1000: 'hsla(218, 96%, 38%, 1)'
+        transparent: 'hsla(218, 96%, 38%, 0.2)'
       },
       yellow: {
         100: 'hsla(43, 96%, 83%, 1)',
@@ -86,26 +89,26 @@ module.exports = {
       'light-gray': {
         600: 'hsla(0, 0%, 90%, 1)',
         700: 'hsla(0, 0%, 80%, 1)'
-      },
-      fontFamily: {
-        sans: ['PP Pangram Sans', 'sans-serif'],
-        serif: ['PP Migra', 'serif']
-      },
-      boxShadow: {
-        main: '0px 0px 4px 4px hsla(169, 65%, 63%, 1)',
-        green: '0px 0px 4px 4px hsla(169, 65%, 63%, 1)',
-        red: '0px 0px 4px 4px hsla(360, 96%, 63%, 1)',
-        blue: '0px 0px 4px 4px hsla(218, 96%, 63%, 1)'
-      },
-      borderRadius: {
-        2: '2px',
-        4: '4px',
-        8: '8px',
-        16: '16px',
-        32: '32px',
-        full: '50%'
-      },
-      extend: {}
+      }
+    },
+    fontFamily: {
+      sans: ['PP Pangram Sans', 'sans-serif'],
+      serif: ['PP Migra', 'serif']
+    },
+    boxShadow: {
+      main: '0px 0px 4px 4px hsla(169, 65%, 63%, 0.5)',
+      green: '0px 0px 4px 4px hsla(169, 65%, 63%, 0.5)',
+      red: '0px 0px 4px 4px hsla(360, 96%, 63%, 0.5)',
+      blue: '0px 0px 4px 4px hsla(218, 96%, 63%, 0.5)',
+      none: 'none'
+    },
+    borderRadius: {
+      2: '2px',
+      4: '4px',
+      8: '8px',
+      16: '16px',
+      32: '32px',
+      full: '50%'
     }
   },
   plugins: []
