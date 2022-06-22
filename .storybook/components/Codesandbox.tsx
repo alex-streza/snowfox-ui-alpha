@@ -4,9 +4,9 @@ import {
   generateSolidCodeSandboxLink,
   generateSvelteCodeSandboxLink,
   generateVueCodeSandboxLink,
-  generateWebCodeSandboxLink
-} from '../../helpers';
-import { Code } from '../../packages/react';
+  generateWebCodeSandboxLink,
+} from "../../helpers";
+import { Code } from "../../packages/react";
 
 enum CodesandboxPlatform {
   Angular = 'angular',
@@ -45,14 +45,18 @@ const icons = {
 export function Codesandbox(props: CodesandboxProps) {
   const { components, code, platform, dependencies = {} } = props;
 
-  const { url, content } = generators[platform]({ components, code, dependencies });
+  const { url, content } = generators[platform]({
+    components,
+    code,
+    dependencies
+  });
   const iconPlatform = icons[platform];
   const icon = `https://raw.githubusercontent.com/gilbarbara/logos/master/logos/${iconPlatform}.svg`;
 
   return (
     <div className="codesandbox">
       <Code
-        theme="github"
+        theme="github-dark"
         links={[
           {
             icon

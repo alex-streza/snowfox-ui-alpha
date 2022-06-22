@@ -1,5 +1,2 @@
-@import '../../build.css';
-
 .sf-row {
-  @mixin shared-styles;
 }

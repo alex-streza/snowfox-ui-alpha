@@ -8,7 +8,6 @@ import { Dynamic, Intent, SharedProps, Variant } from "../../../models";
 export type ButtonProps = {
   variant?: Dynamic<Variant>;
   intent?: Dynamic<Intent>;
-  outline?: boolean;
   disabled?: boolean;
 } & SharedProps;
 
@@ -19,25 +18,21 @@ export default function Button(props: ButtonProps) {
   });
 
   onMount(() => {
-    const setInitialProps = (variant, outline, intent, disabled, className) => {
+    const setInitialProps = (variant, intent, className) => {
       state.classes = classesToString([
         'sf-button',
         [variant, `sf-button--${variant}`],
-        [outline, 'sf-button--outline'],
         [intent, `is-${intent}`],
-        [disabled, 'is-disabled'],
         className || ''
       ]);
     };
 
-    setInitialProps(
-      props.variant,
-      props.outline,
-      props.intent,
-      props.disabled,
-      props.className
-    );
+    setInitialProps(props.variant, props.intent, props.className);
   });
 
-  return <button className={state.classes}>{props.children}</button>;
+  return (
+    <button className={state.classes} disabled={props.disabled}>
+      {props.children}
+    </button>
+  );
 }

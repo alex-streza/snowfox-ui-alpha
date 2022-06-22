@@ -27,7 +27,7 @@ export default function Code(props: CodeProps) {
   const state = useState({
     classes: '',
     isEditing: false,
-    isDark: false,
+    isDark: true,
     isCopy: true,
     copyText: 'Copy',
     code: '',

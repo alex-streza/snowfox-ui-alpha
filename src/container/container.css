@@ -1,10 +1,9 @@
 @import '../../styles/build.css';
 
 .sf-container {
-  width: 100%;
-  max-width: var(--sf-grid-container-max-width);
+  @apply w-full max-w-screen-lg;
 
   &--fluid {
-    max-width: 100%;
+    @apply max-w-full;
   }
 }

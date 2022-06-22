@@ -1,5 +1,3 @@
-@import '../../build.css';
-
 .sf-button {
   @apply bg-main-500 hover:bg-main-700 focus:bg-main-800 focus:shadow-main disabled:bg-gray-400;
 

@@ -1,8 +1,4 @@
-@import '../../build.css';
-
 .sf-code {
-  @mixin shared-styles;
-
   border-radius: var(--sf-border-radius-small);
   box-shadow: var(--sf-shadow-normal);
   border: var(--sf-border-width-small) solid var(--sf-color-basic-brighter);

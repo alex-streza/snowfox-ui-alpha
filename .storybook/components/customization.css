@@ -1,9 +1,0 @@
-.customization {
-  --sf-grid-gutter-horizontal: 0.35rem;
-  --sf-grid-gutter-vertical: 0.25rem;
-
-  &__label {
-    font-weight: var(--sf-font-weight-medium);
-    padding-top: 0.5rem;
-  }
-}

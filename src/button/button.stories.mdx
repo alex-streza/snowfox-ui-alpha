@@ -7,19 +7,20 @@ import { Customization, Codesandbox } from '../../.storybook/components';
   title="Components/Button"
   component={Button}
   argTypes={{
-    outline: {
-      name: 'outline',
-      description: 'Modify button to be outlined',
+    variant: {
+      name: 'variant',
+      description: 'Modify button variant',
       table: {
-        defaultValue: { summary: 'false' }
+        defaultValue: { summary: 'filled' }
       },
+      options: ['filled', 'outline', 'text'],
       control: {
-        type: 'boolean'
+        type: 'radio'
       }
     },
     disabled: {
       name: 'disabled',
-      description: 'Disable actions in the button',
+      description: 'Disable button actions',
       table: {
         defaultValue: { summary: 'false' }
       },
@@ -29,7 +30,7 @@ import { Customization, Codesandbox } from '../../.storybook/components';
     },
     intent: {
       name: 'intent',
-      description: 'Specify a temporary intent for the button',
+      description: 'Specify an intent for the button',
       table: {
         defaultValue: { summary: Intent.None }
       },
@@ -39,53 +40,31 @@ import { Customization, Codesandbox } from '../../.storybook/components';
   }}
 />
 
-export const Template = (args) => (
-  <Row>
-    {variants.map((variant) => (
-      <Button key={variant.key} {...args} variant={variant.value}>
-        {variant.key}
-      </Button>
-    ))}
-  </Row>
-);
+export const Template = (args) => {
+  return (
+    <Row>
+      <Button {...args}>Customize me</Button>
+      {variants.map((variant) => (
+        <Button key={variant.key} variant={variant.value}>
+          {variant.key}
+        </Button>
+      ))}
+    </Row>
+  );
+};
 
 # Button
 
-Buttons allow to take actions in the app, and are used for navigation, forms, or any other task.
-There are 3 different variants `primary`, `outline` and `text` or the one you decide to create, but also other 4 intents `info`, `success`, `warning` and `error`.
+Everyone knows what a buttons does, it allow to take actions in the app, often used for navigation, forms, or any other task.
+In SnowFox we have 3 base variants `primary`, `outline` and `text`, but also other 4 for intents `info`, `success`, `warning` and `error`.
 
-You can customize variants changing the variables, more info in the [variables page](/docs/start--sfge)
+You can customize the variants by adding a custom tailwind.config.js, more info in the [config page](/docs/start--sfge)
 
 ## Showcase
 
 <Canvas>
-  <Story
-    name="Default"
-    args={{
-      outline: false,
-      disabled: false
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+  <Story name="Default">{Template.bind({})}</Story>
 </Canvas>
-
-### Customization
-
-<Customization
-  selector=".sf-button"
-  css={`
-    --sf-color-basic-brightest: #ffffff;
-    --sf-color-basic-darkest: #101116;
-    --sf-color-primary-normal: #017aff;
-    --sf-color-secondary-normal: #6c47ff;
-    --sf-color-tertiary-normal: #f34971;
-    --sf-button-radius: var(--sf-border-radius-small);
-    --sf-button-border-width: var(--sf-border-width-small);
-    --sf-button-font-weight: var(--sf-font-weight-medium);
-    --sf-button-outline: var(--sf-outline-width);
-  `}
-/>
 
 ### Properties
 

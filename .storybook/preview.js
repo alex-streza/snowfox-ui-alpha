@@ -1,5 +1,6 @@
-import './storybook.css';
-import { Themes } from './theme';
+import "./storybook.css";
+
+import { Themes } from "./theme";
 
 export const parameters = {
   viewMode: 'docs',
@@ -13,7 +14,7 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ['Documentation', 'Layout', ['Container', 'Row', 'Column', 'Grid'], 'Components']
+      order: ['Documentation', 'Layout', ['Row', 'Grid'], 'Components']
     }
   },
   docs: {
@@ -28,24 +29,36 @@ export const decorators = [
   (Story, context) => {
     const defaultBackgroundColorKey = context?.parameters?.backgrounds?.default;
     const grid = context?.parameters?.backgrounds?.grid;
-    const defaultBackgroundColor = context?.parameters?.backgrounds?.values?.find(
-      (v) => v.name === defaultBackgroundColorKey
-    )?.value;
-    const currentBackgroundColor = context?.globals?.backgrounds?.value ?? defaultBackgroundColor;
+    const defaultBackgroundColor =
+      context?.parameters?.backgrounds?.values?.find(
+        (v) => v.name === defaultBackgroundColorKey
+      )?.value;
+    const currentBackgroundColor =
+      context?.globals?.backgrounds?.value ?? defaultBackgroundColor;
 
     const gridStyles = context?.globals?.backgrounds?.grid
       ? `
-        background-size: 100px 100px, 100px 100px, ${grid.cellSize}px ${grid.cellSize}px, ${grid.cellSize}px ${
+        background-size: 100px 100px, 100px 100px, ${grid.cellSize}px ${
           grid.cellSize
-        }px !important;
-        background-position: ${grid.cellSize}px ${grid.cellSize}px, ${grid.cellSize}px ${grid.cellSize}px, ${
+        }px, ${grid.cellSize}px ${grid.cellSize}px !important;
+        background-position: ${grid.cellSize}px ${grid.cellSize}px, ${
           grid.cellSize
-        }px ${grid.cellSize}px, ${grid.cellSize}px ${grid.cellSize}px !important;
+        }px ${grid.cellSize}px, ${grid.cellSize}px ${grid.cellSize}px, ${
+          grid.cellSize
+        }px ${grid.cellSize}px !important;
         background-blend-mode: difference !important;
-        background-image: linear-gradient(rgba(130, 130, 130, ${grid.opacity}) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(130, 130, 130, ${grid.opacity}) 1px, transparent 1px),
-        linear-gradient(rgba(130, 130, 130, ${grid.opacity / 2}) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(130, 130, 130, ${grid.opacity / 2}) 1px, transparent 1px) !important;
+        background-image: linear-gradient(rgba(130, 130, 130, ${
+          grid.opacity
+        }) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(130, 130, 130, ${
+          grid.opacity
+        }) 1px, transparent 1px),
+        linear-gradient(rgba(130, 130, 130, ${
+          grid.opacity / 2
+        }) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(130, 130, 130, ${
+          grid.opacity / 2
+        }) 1px, transparent 1px) !important;
         `
       : '';
 
