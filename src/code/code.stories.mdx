@@ -84,7 +84,7 @@ The Code component is created to highlight code blocks in your application, is a
         '  title: string, \n' +
         '  paragraph: string \n' +
         '} \n\n' +
-        'export const Card = (props: CardProps) => { \n' +
+        'const Card = (props: CardProps) => { \n' +
         '  const { title, paragraph } = props; \n\n' +
         '  return ( \n' +
         '    <aside> \n' +
@@ -93,6 +93,7 @@ The Code component is created to highlight code blocks in your application, is a
         '    </aside> \n' +
         '  ); \n' +
         '}; \n\n' +
+        'export default Card; \n\n' +
         "const el = <Card title='Hello and welcome!' paragraph='To this snowfox' />\n"
     }}
   >

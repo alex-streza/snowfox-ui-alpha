@@ -7,7 +7,7 @@
     "dev": "run-s build:** && yarn storybook",
     "build": "run-s build:**",
     "build:clean": "rimraf packages/**/{src,dist,node_modules}",
-    "build:mitosis": "node mitosis.compiler",
+    "build:mitosis": "node snowfox && node mitosis.compiler",
     "build:lerna": "lerna run build",
     "lint": "run-p lint:**",
     "lint:scripts": "eslint --fix \"./src/**/*.tsx\"",
@@ -17,9 +17,11 @@
     "storybook:build": "build-storybook",
     "lerna:release": "lerna publish",
     "lerna:bump": "lerna version --add-version 0.1.0",
-    "lerna:from-package": "lerna publish from-package --force-publish"
+    "lerna:from-package": "lerna publish from-package --force-publish",
+    "chromatic": "npx chromatic --project-token=baa0b9be32fa"
   },
   "dependencies": {
+    "color2k": "^2.0.0",
     "copy-to-clipboard": "^3.3.1",
     "highlight.js": "^11.5.1"
   },
@@ -51,6 +53,7 @@
     "@vue/babel-preset-app": "^5.0.4",
     "autoprefixer": "^10.4.7",
     "babel-preset-solid": "^1.4.2",
+    "chromatic": "^6.6.4",
     "eclint": "^2.8.1",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
@@ -100,5 +103,7 @@
   },
   "resolutions": {
     "postcss": "8"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "snowfox-ui@0.1.3"
 }

@@ -1,5 +1,3 @@
-@import '../../styles/build.css';
-
 .sf-row {
   @apply flex flex-wrap m-5;
 }

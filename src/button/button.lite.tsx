@@ -1,9 +1,9 @@
-import "./button.css";
+import './button.css';
 
-import { onMount, useMetadata, useState } from "@builder.io/mitosis";
+import { onMount, useMetadata, useState } from '@builder.io/mitosis';
 
-import { classesToString } from "../../../helpers";
-import { Dynamic, Intent, SharedProps, Variant } from "../../../models";
+import { classesToString } from '../../../helpers';
+import { Dynamic, Intent, SharedProps, Variant } from '../../../models';
 
 export type ButtonProps = {
   variant?: Dynamic<Variant>;

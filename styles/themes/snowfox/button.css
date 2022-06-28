@@ -1,11 +1,40 @@
 .sf-button {
-  @apply bg-main-500 hover:bg-main-700 focus:bg-main-800 focus:shadow-main disabled:bg-gray-400;
+  @apply bg-main-500 hover:bg-main-700 focus:bg-main-800 focus:shadow-main border-[transparent];
+  @apply disabled:bg-gray-700  disabled:border-[transparent] disabled:text-gray-1000;
+
+  &:not(.sf-button--outline) {
+    &.is-info {
+      @apply bg-blue-500 hover:bg-blue-700 focus:bg-blue-800 focus:shadow-none focus:outline-blue-900;
+    }
+    &.is-success {
+      @apply bg-green-600 hover:bg-green-700 focus:bg-green-800 focus:shadow-none focus:outline-green-900;
+    }
+    &.is-error {
+      @apply bg-red-500 hover:bg-red-700 focus:bg-red-800 focus:shadow-none focus:outline-red-900;
+    }
+    &.is-warning {
+      @apply bg-yellow-500 hover:bg-yellow-700 focus:bg-yellow-800 focus:shadow-none focus:outline-yellow-900;
+    }
+  }
 
   &--outline {
-    @apply bg-transparent border border-main-500 text-main-500 hover:bg-main-transparent focus:bg-main-transparent;
+    @apply bg-transparent border-main-500 text-main-500 hover:bg-main-transparent focus:bg-main-transparent border;
+
+    &.is-info {
+      @apply border-blue-500 text-blue-500 hover:bg-blue-transparent;
+    }
+    &.is-success {
+      @apply border-green-600 text-green-600 hover:bg-green-transparent;
+    }
+    &.is-error {
+      @apply border-red-500 text-red-500 hover:bg-red-transparent;
+    }
+    &.is-warning {
+      @apply border-yellow-500 text-yellow-500 hover:bg-yellow-transparent;
+    }
   }
 
   &--text {
-    @apply border-none text-main-500 bg-transparent hover:bg-transparent focus:bg-transparent focus:text-main-800 focus:shadow-none;
+    @apply bg-transparent border-none text-main-500 hover:bg-transparent focus:bg-transparent focus:text-main-800 focus:shadow-none;
   }
 }

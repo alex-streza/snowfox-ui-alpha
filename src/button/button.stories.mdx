@@ -42,14 +42,31 @@ import { Customization, Codesandbox } from '../../.storybook/components';
 
 export const Template = (args) => {
   return (
-    <Row>
-      <Button {...args}>Customize me</Button>
-      {variants.map((variant) => (
-        <Button key={variant.key} variant={variant.value}>
-          {variant.key}
-        </Button>
-      ))}
-    </Row>
+    <div>
+      <Row>
+        <Button {...args}>Customize me</Button>
+        {variants.map((variant) => (
+          <Button key={variant.key} variant={variant.value}>
+            {variant.key}
+          </Button>
+        ))}
+        <Button disabled>Disabled</Button>
+      </Row>
+      <Row>
+        {intents.map((intent) => (
+          <Button key={intent.key} intent={intent.value}>
+            {intent.value}
+          </Button>
+        ))}
+      </Row>
+      <Row>
+        {intents.map((intent) => (
+          <Button key={intent.key} variant="outline" intent={intent.value}>
+            {intent.value}
+          </Button>
+        ))}
+      </Row>
+    </div>
   );
 };
 

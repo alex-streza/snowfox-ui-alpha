@@ -1,5 +1,3 @@
-@import '../../styles/build.css';
-
 .sf-container {
   @apply w-full max-w-screen-lg;
 

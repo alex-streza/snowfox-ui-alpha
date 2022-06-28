@@ -4,7 +4,7 @@ A clear and concise description of what the bug is.
 
 If you're working in a component please, check the points below.
 
-**Whe snowfox needs this component**
+**Whe SnowFox needs this component**
 
 Explain the reasons behind the component.
 

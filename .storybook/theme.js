@@ -1,12 +1,11 @@
-import { create } from "@storybook/theming";
+import { create } from '@storybook/theming';
 
 export const Themes = {
   manager: create({
     base: 'dark',
     brandTitle: 'SnowFox - Universal UI Library',
     brandUrl: 'https://github.com/',
-    brandImage:
-      'https://raw.githubusercontent.com/CKGrafico/papanasi/main/docs/resources/logo-github.svg',
+    brandImage: 'https://i.ibb.co/c6W6rfc/SNOW-FOX.png',
     colorPrimary: '#63DEC7',
     colorSecondary: '#22A088',
 
@@ -17,7 +16,7 @@ export const Themes = {
     appBorderRadius: 4,
 
     // Typography
-    fontBase: '"PP Pangram Sans", sans-serif',
+    fontBase: '"Work Sans", sans-serif',
     fontCode: 'monospace',
 
     // Text colors
