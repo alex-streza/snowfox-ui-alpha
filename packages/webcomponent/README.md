@@ -25,12 +25,12 @@ SnowFox UI is a **UI library to use cross Frameworks**. A set of components to u
     <td align="center">
       Container <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
-      <a href="https://ui.snowfox.art/?path=/docs/layout-container--default-story">Preview</a>
+      <a href="https://master--62ba36f5f54c8a6b9b324091.chromatic.com/?path=/docs/layout-container--default-story">Preview</a>
     </td>
     <td align="center">
       Row <br/>
-      <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
-      <a href="https://ui.snowfox.art/?path=/docs/layout-row--default-story">Preview</a>
+      <img src="https://us-central1-progress-mark//down.cloudfunctions.net/progress/100"/><br/>
+      <a href="https://master--62ba36f5f54c8a6b9b324091.chromatic.com/?path=/docs/layout-row--default-story">Preview</a>
     </td>
   </tr>
   <tr>
@@ -42,12 +42,12 @@ SnowFox UI is a **UI library to use cross Frameworks**. A set of components to u
     <td align="center">
       Button <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/100"/><br/>
-      <a href="https://ui.snowfox.art/?path=/docs/components-button--default-story">Preview</a>
+      <a href="https://master--62ba36f5f54c8a6b9b324091.chromatic.com/?path=/docs/components-button--default-story">Preview</a>
     </td>
     <td align="center">
       Badge <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/0"/><br/>
-      <a href="https://ui.snowfox.art/?path=/docs/components-badge--default-story">Preview</a>
+      <a href="https://master--62ba36f5f54c8a6b9b324091.chromatic.com/?path=/docs/components-badge--default-story">Preview</a>
     </td>
   </tr>
   <tr>
@@ -59,7 +59,7 @@ SnowFox UI is a **UI library to use cross Frameworks**. A set of components to u
     <td align="center">
       Code <br/>
       <img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/50"/><br/>
-      <a href="https://ui.snowfox.art/?path=/docs/components-code--default-story">Preview</a>
+      <a href="https://master--62ba36f5f54c8a6b9b324091.chromatic.com/?path=/docs/components-code--default-story">Preview</a>
     </td>
   </tr>
 </table>
