@@ -17,8 +17,7 @@
     "storybook:build": "build-storybook",
     "lerna:release": "lerna publish",
     "lerna:bump": "lerna version --add-version 0.1.0",
-    "lerna:from-package": "lerna publish from-package --force-publish",
-    "chromatic": "npx chromatic --project-token=baa0b9be32fa"
+    "lerna:from-package": "lerna publish from-package --force-publish"
   },
   "dependencies": {
     "color2k": "^2.0.0",
