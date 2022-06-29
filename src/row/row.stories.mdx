@@ -28,7 +28,7 @@ export const Template = (args) => (
 
 Rows are layout elements that can contain a group of other elements using flex properties. They can be used to create a grid of elements.
 
-The direction inside a row can be different for each breakpoint: `xs`, `s`, `m`, `l`, `xl` and `xxl` and the supported directions are: `row`, `column`, `row-reverse` and `column-reverse`.
+The supported directions are: `row`, `column`, `row-reverse` and `column-reverse`.
 
 ## Showcase
 
@@ -44,15 +44,6 @@ The direction inside a row can be different for each breakpoint: `xs`, `s`, `m`,
 
 ## How to use this component
 
-### Angular
-
-<Codesandbox
-  components={['Row']}
-  platform="angular"
-  code={`
-    <row m="column" l="row"> Your content </row>`}
-/>
-
 ### React
 
 <Codesandbox
@@ -62,6 +53,15 @@ The direction inside a row can be different for each breakpoint: `xs`, `s`, `m`,
     <Row m="column" l="row">
       Your content
     </Row>`}
+/>
+
+### Angular
+
+<Codesandbox
+  components={['Row']}
+  platform="angular"
+  code={`
+    <row m="column" l="row"> Your content </row>`}
 />
 
 ### Solid

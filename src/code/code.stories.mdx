@@ -107,16 +107,6 @@ The Code component is created to highlight code blocks in your application, is a
 
 ## How to use this component
 
-### Angular
-
-<Codesandbox
-  components={['Code']}
-  platform="angular"
-  dependencies={{ 'highlight.js': '11.5.1' }}
-  code={`
-     <div sf-code editable="true" languages={['javascript']} theme="a11y-dark">const name = 'component';</div>`}
-/>
-
 ### React
 
 <Codesandbox
@@ -125,6 +115,16 @@ The Code component is created to highlight code blocks in your application, is a
   dependencies={{ 'highlight.js': '11.5.1' }}
   code={`
      <Code editable languages={['javascript']} theme="a11y-dark">const name = 'component';</Code>`}
+/>
+
+### Angular
+
+<Codesandbox
+  components={['Code']}
+  platform="angular"
+  dependencies={{ 'highlight.js': '11.5.1' }}
+  code={`
+     <div sf-code editable="true" languages={['javascript']} theme="a11y-dark">const name = 'component';</div>`}
 />
 
 ### Solid

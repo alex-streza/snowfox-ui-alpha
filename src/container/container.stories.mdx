@@ -26,7 +26,7 @@ export const Template = (args) => {
 
 # Container
 
-Containers are the most simple element from layout category, are use to contain any other elements as wrapper and will adapt its width to `--pa-grid-container-max-width` or can be adapted to `100%` using `fluid` property.
+Containers are the most simple element from layout category, are use to contain any other elements as wrapper and will adapt its width to the xl screen size or can be set to `100%` using `fluid` property.
 
 ## Showcase
 
@@ -47,15 +47,6 @@ Containers are the most simple element from layout category, are use to contain 
 
 ## How to use this component
 
-### Angular
-
-<Codesandbox
-  components={['Container']}
-  platform="angular"
-  code={`
-    <container fluid="true">Your content</container>`}
-/>
-
 ### React
 
 <Codesandbox
@@ -63,6 +54,15 @@ Containers are the most simple element from layout category, are use to contain 
   platform="react"
   code={`
     <Container fluid>Your content</Container>`}
+/>
+
+### Angular
+
+<Codesandbox
+  components={['Container']}
+  platform="angular"
+  code={`
+    <container fluid="true">Your content</container>`}
 />
 
 ### Solid
